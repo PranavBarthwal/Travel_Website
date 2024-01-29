@@ -4,8 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Pricing Tables</title>
+    <style>
+      a{
+        text-decoration: none;
+      }
+
+    </style>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
 </head>
 <body>
   <header class="registration-header">
@@ -61,7 +68,7 @@
           </li>
         
       </ul>
-      <div class="btn"><button>Purchase</button></div>
+      <a href="../payment.html"><div class="btn"><button class="basic"  onclick="getinfo(event)">Buy Basic</button></div></a>
     </div>
     <div class="table premium">
       <div class="ribbon"><span>Recommend</span></div>
@@ -100,7 +107,7 @@
             <span class="icon cross"><i class="fas fa-times"></i></span>
           </li>
       </ul>
-      <div class="btn"><button>Purchase</button></div>
+      <a href="../payment.html"><div class="btn"><button class="premium" onclick="getinfo(event)">Buy Premium</button></div></a>
     </div>
     <div class="table ultimate">
       <div class="price-section">
@@ -131,9 +138,40 @@
             <span class="icon check"><i class="fas fa-check"></i></span>
           </li>
       </ul>
-      <div class="btn"><button>Purchase</button></div>
+      <a href="../payment.html"><div class="btn"><button class="ultimate" onclick="getinfo(event)">Buy Ultimate</button></div></a>
     </div>
   </div>
 
+
+  <script>
+    let packName = localStorage.getItem('packageName')
+    let price = localStorage.getItem('packageName')
+    let finalPrizing = localStorage.getItem('finalPrizing')
+
+    let basic = document.querySelector('.basic')
+    let premium = document.querySelector('.premium')
+    let ultimate = document.querySelector('.ultimate')
+
+    console.log("hello")
+
+    function getinfo(event){
+        
+        display(event.target.textContent);
+    }
+
+
+    function display(data){
+
+        if (data == "Buy Basic"){
+            packName.textContent= "Buy Basic"
+
+        }
+        else if(data == "Buy Premium"){
+            packName.textContent= "Buy Premium"
+        }else{
+            packName.textContent= "Buy Ultimate"
+        }
+    }
+  </script>
 </body>
 </html>

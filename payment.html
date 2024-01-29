@@ -40,10 +40,10 @@
               <ul class="list-group mb-3">
                 <li class="list-group-item d-flex justify-content-between lh-sm">
                   <div>
-                    <h6 class="my-0">Goa 4D/3N Package</h6>
+                    <h6 class="my-0" id="packageName">Goa 4D/3N Package</h6>
                     <small class="text-body-secondary">Brief description</small>
                   </div>
-                  <span class="text-body-secondary">15000/-</span>
+                  <span class="text-body-secondary" id="price">15000/-</span>
                 </li>
                 
                 <li class="list-group-item d-flex justify-content-between bg-body-tertiary">
@@ -55,7 +55,7 @@
                 </li>
                 <li class="list-group-item d-flex justify-content-between">
                   <span>Total (INR)</span>
-                  <strong>14000/-</strong>
+                  <strong id="finalPricing">14000/-</strong>
                 </li
               </ul>
       
@@ -234,6 +234,17 @@
       </div>
 
 
+      <script>
+        let packageName = document.querySelector('#packageName')
+        let price = document.querySelector('#price')
+        let finalPrizing = document.querySelector('#finalPricing')
+
+        localStorage.setItem('packageName', packageName)
+        localStorage.setItem('price', price)
+        localStorage.setItem('finalPrizing', finalPrizing)
+
+        window.location.href = "./pricing/index.html"
+      </script>
 
 </body>
 </html>
